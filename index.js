@@ -9,7 +9,7 @@ const credentials = require('./settings/credentials.json');
 const config = require('./settings/config.json');
 const Manager = new Discord.ShardingManager('./bastion.js', {
   totalShards: config.shardCount,
-  token: credentials.token
+  token: process.env.token
 });
 const log = require('./handlers/logHandler');
 
