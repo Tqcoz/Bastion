@@ -50,7 +50,7 @@ const Modules = require('./handlers/moduleHandler');
 BASTION.commands = Modules.commands;
 BASTION.aliases = Modules.aliases;
 
-BASTION.login(BASTION.credentials.token).catch(e => {
+BASTION.login(process.env.token).catch(e => {
   BASTION.log.error(e.toString());
   process.exit(1);
 });
